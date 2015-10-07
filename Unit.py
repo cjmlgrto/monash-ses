@@ -43,13 +43,13 @@ class Unit:
     # SET ATTRIBUTES
     
     def setCode(self,newCode):
-        self.code = newUnitCode
+        self.code = newCode
         
     def setTitle(self,newTitle):
-        self.title = newUnitTitle
+        self.title = newTitle
         
     def setDescription(self,newDescription):
-        self.description = newUnitDescription
+        self.description = newDescription
         
     def setSequencesOffered(self,newSequencesOffered):
         self.sequencesOffered.append(newSequencesOffered)
@@ -68,3 +68,10 @@ class Unit:
         
     def setProhibList(self,newProhibList):
         self.prohibList.append(newProhibList)
+<<<<<<< Updated upstream
+=======
+        
+    
+    
+    
+>>>>>>> Stashed changes
