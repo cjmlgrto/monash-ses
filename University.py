@@ -20,7 +20,12 @@ class University:
             student.displayDetails()
 
     def displayUnits(self):
-        pass
+        print("Number of Units" + str(self.title) + "is " + str(len(self.unitList)))
+        for unit in self.unitList:
+            unit.displayDetails()
+
 
     def displayCourses(self):
-        pass
+        print("Number of Courses in" + str(self.title) + "is " + str(len(self.courseList)))
+        for course in self.courseList:
+            course.displayDetails()

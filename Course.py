@@ -34,5 +34,7 @@ class Course:
         
     def unitList(self,newUnitList):
         self.unitList.append(newUnitList)
-        
+
+    def displayDetails(self):
+        print(self.code + '    ' + self.name)
     
