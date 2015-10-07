@@ -21,7 +21,7 @@ class Student:
         self.studID = val
 
     def getName(self):
-        return self.studFname + self.studLname
+        return self.studFname + ' ' + self.studLname
 
     def setName(self, fname, lname):
         self.studFname = fname
@@ -52,4 +52,5 @@ class Student:
         self.studID = val
 
     def displayDetails(self):
-        print(self.getStudID + '   ' + self.getName)
+       string = 'Student ID: ' + str(self.getStudID()) + ', Name: ' + str(self.getName())
+       return string
