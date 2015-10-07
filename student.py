@@ -51,3 +51,5 @@ class Student:
     def setStudID(self, val):
         self.studID = val
 
+    def displayDetails(self):
+        print(self.getStudID + '   ' + self.getName)
