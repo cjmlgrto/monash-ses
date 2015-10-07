@@ -68,3 +68,6 @@ class Unit:
         
     def setProhibList(self,newProhibList):
         self.prohibList.append(newProhibList)
+
+    def displayDetails(self):
+        print(self.code + '    ' + self.title)

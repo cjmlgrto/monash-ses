@@ -8,10 +8,16 @@ class University:
         self.unitList = []
         self.courseList = []
 
+    def getTitle(self):
+        return self.title
+
+    def setTitle(self, val):
+        self.title = val
+
     def displayStudents(self):
-        print("Number of students in University is ")
+        print("Number of students in" + str(self.title) + "is " + str(len(self.studentList)))
         for student in self.studentList:
-            student.displayDetails
+            student.displayDetails()
 
     def displayUnits(self):
         pass
