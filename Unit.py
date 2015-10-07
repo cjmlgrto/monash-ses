@@ -68,10 +68,3 @@ class Unit:
         
     def setProhibList(self,newProhibList):
         self.prohibList.append(newProhibList)
-<<<<<<< Updated upstream
-=======
-        
-    
-    
-    
->>>>>>> Stashed changes
