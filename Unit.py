@@ -70,4 +70,4 @@ class Unit:
         self.prohibList.append(newProhibList)
 
     def displayDetails(self):
-        print(self.code + '    ' + self.title)
+        return 'Unit Code: ' + self.code + ', Title: ' + self.title

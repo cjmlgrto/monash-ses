@@ -36,5 +36,4 @@ class Course:
         self.unitList.append(newUnitList)
 
     def displayDetails(self):
-        print(self.code + '    ' + self.name)
-    
+        return 'Course Code: ' + self.code + ', Course Title: ' + self.name
