@@ -1,5 +1,7 @@
 __author__ = 'xav_work'
 
+import CourseAdmin
+
 '''
 UNFINISHED - NEEDS LOTS OF WORK BUT IT SEEMS THAT WE ONLY NEED TO FOCUS ON the 4 use cases given for week 11, will come
 back to it when have time.
@@ -47,14 +49,37 @@ def main():
         validInput = False
         while not validInput:
             try:
-                num1 = input('Enter: ')
+                num1 = input('\nEnter: ')
                 if int(num1) <= 8 and int(num1) >= 1:
                     validInput = True
                     num1 = int(num1)
 
+                    if num1 == 1:
+                        pass
+
+                    if num1 == 2:
+                        pass
+
+                    if num1 == 3:
+                        pass
+
+                    if num1 == 4:
+                        pass
+
+                    if num1 == 5:
+                        pass
+
+                    if num1 == 6:
+                        pass
+
+                    if num1 == 7:
+                        pass
+
                     if num1 == 8:
                         quit = True
                         print("Thankyou, see you later :)")
+                else:
+                    raise ValueError
             except ValueError:
                 print("\nError: Please enter a number between 1 and 8")
 

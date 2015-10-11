@@ -17,15 +17,15 @@ class University:
     def displayStudents(self):
         print("Number of students in" + str(self.title) + "is " + str(len(self.studentList)))
         for student in self.studentList:
-            student.displayDetails()
+            print(student.displayDetails())
 
     def displayUnits(self):
         print("Number of Units" + str(self.title) + "is " + str(len(self.unitList)))
         for unit in self.unitList:
-            unit.displayDetails()
+            print(unit.displayDetails())
 
 
     def displayCourses(self):
         print("Number of Courses in" + str(self.title) + "is " + str(len(self.courseList)))
         for course in self.courseList:
-            course.displayDetails()
+            print(course.displayDetails())
