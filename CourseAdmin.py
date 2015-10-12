@@ -6,9 +6,8 @@ from Unit import Unit
 from Student import Student
 
 
-studID = 10000000
+def createStudent(studID):
 
-def createStudent(self):
     studObject = str(studID)
     studObject = Student()
     studObject.setStudID(str(studID))
@@ -26,8 +25,8 @@ def createStudent(self):
     studObject.setResidencyType(residencyType)
 
     studyType = input("Please enter the student's study type (F for full time, P for part time")
-    studObject.setStudy
-    studID += 1 #increment student id to preserve uniqueness
+    studObject.setStudyType(studyType)
+
 
 def createUnit(self):
         pass

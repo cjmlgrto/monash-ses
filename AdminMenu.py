@@ -44,6 +44,7 @@ def main():
  -----------------------------------------------------------------------------------------------------------------------''')
 
     print(sesStartup)
+    studID = 10000000
     while not quit:
         print(adminMenu)
         validInput = False
@@ -55,7 +56,8 @@ def main():
                     num1 = int(num1)
 
                     if num1 == 1:
-                        pass
+                        createStudent(studID)
+                        studID += 1
 
                     if num1 == 2:
                         pass
