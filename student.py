@@ -23,34 +23,37 @@ class Student:
     def getName(self):
         return self.studFname + ' ' + self.studLname
 
-    def setName(self, fname, lname):
-        self.studFname = fname
+    def setLName(self, lname):
         self.studLname = lname
+
+    def setFName(self, fname):
+        self.studFname = fname
 
     def getDegreeType(self):
         return self.degreeType
 
-    def setStudID(self, val):
-        self.studID = val
+    def setDegreeType(self, val):
+        self.degreeType = val
 
     def getResidencyType(self):
         return self.residencyType
 
-    def setStudID(self, val):
-        self.studID = val
+    def setResidencyType(self, val):
+        self.residencyType = val
 
     def getCourseCode(self):
         return self.courseCode
 
-    def setStudID(self, val):
-        self.studID = val
+    def setCourseCode(self, val):
+        self.courseCode = val
 
     def getStudyType(self):
         return self.studyType
 
-    def setStudID(self, val):
-        self.studID = val
+    def setStudyType(self, val):
+        self.studyType = val
 
     def displayDetails(self):
        string = 'Student ID: ' + str(self.getStudID()) + ', Name: ' + str(self.getName())
        return string
+
