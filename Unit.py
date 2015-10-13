@@ -7,10 +7,8 @@ class Unit:
         self.sequencesOffered = []
         self.yearOffered = ''
         self.courseList = []
-        self.prereqList = []
-        self.coreqList = []
-        self.prohibList = []
-        
+        self.studentList = []
+
     # GET ATTRIBUTES
         
     def getCode(self):
@@ -30,16 +28,7 @@ class Unit:
         
     def getCourseList(self):
         return self.courseList
-        
-    def getPrereqList(self):
-        return self.prereqList
-        
-    def getCoreqList(self):
-        return self.coreqList
-        
-    def getProhibList(self):
-        return self.prohibList
-        
+
     # SET ATTRIBUTES
     
     def setCode(self,newCode):
@@ -59,15 +48,6 @@ class Unit:
         
     def setCourseList(self,newCourseList):
         self.courseList.append(newCourseList)
-        
-    def setPrereqList(self,newPrereqList):
-        self.prereqList.append(newPrereqList)
-        
-    def setCoreqList(self,newCoreqList):
-        self.coreqList.append(newCoreqList)
-        
-    def setProhibList(self,newProhibList):
-        self.prohibList.append(newProhibList)
 
     def displayDetails(self):
         return 'Unit Code: ' + self.code + ', Title: ' + self.title

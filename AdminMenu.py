@@ -46,6 +46,7 @@ def main():
  '----------------'  '----------------'  '----------------'
 
  -----------------------------------------------------------------------------------------------------------------------''')
+    monash = University('Monash')
     CA = CourseAdmin()
     print(sesStartup)
     studID = 10000000
@@ -60,14 +61,15 @@ def main():
                     num1 = int(num1)
 
                     if num1 == 1:
-                        hello = CA.createStudent(studID)
+                        CA.createStudent(studID, monash)
                         studID += 1
 
+
                     if num1 == 2:
-                        pass
+                        CA.createUnit(monash)
 
                     if num1 == 3:
-                        pass
+                        CA.createCourse(monash)
 
                     if num1 == 4:
                         pass
