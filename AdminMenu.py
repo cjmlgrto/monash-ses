@@ -1,6 +1,10 @@
 __author__ = 'xav_work'
 
-import CourseAdmin
+from CourseAdmin import CourseAdmin
+from Student import Student
+from Unit import Unit
+from Course import Course
+from University import University
 
 '''
 UNFINISHED - NEEDS LOTS OF WORK BUT IT SEEMS THAT WE ONLY NEED TO FOCUS ON the 4 use cases given for week 11, will come
@@ -42,7 +46,7 @@ def main():
  '----------------'  '----------------'  '----------------'
 
  -----------------------------------------------------------------------------------------------------------------------''')
-
+    CA = CourseAdmin()
     print(sesStartup)
     studID = 10000000
     while not quit:
@@ -56,7 +60,7 @@ def main():
                     num1 = int(num1)
 
                     if num1 == 1:
-                        createStudent(studID)
+                        hello = CA.createStudent(studID)
                         studID += 1
 
                     if num1 == 2:
