@@ -46,13 +46,15 @@ def main():
  '----------------'  '----------------'  '----------------'
 
  -----------------------------------------------------------------------------------------------------------------------''')
-    monash = University('Monash')
+    monash = University('Monash University')
     CA = CourseAdmin()
     print(sesStartup)
     studID = 10000000
+
     while not quit:
         print(adminMenu)
         validInput = False
+
         while not validInput:
             try:
                 num1 = input('\nEnter: ')
@@ -61,9 +63,7 @@ def main():
                     num1 = int(num1)
 
                     if num1 == 1:
-                        CA.createStudent(studID, monash)
-                        studID += 1
-
+                        studID = CA.createStudent(studID, monash)
 
                     if num1 == 2:
                         CA.createUnit(monash)
@@ -72,13 +72,15 @@ def main():
                         CA.createCourse(monash)
 
                     if num1 == 4:
-                        pass
+                        CA.enrollStudent(monash)
 
                     if num1 == 5:
                         pass
 
                     if num1 == 6:
-                        pass
+                        monash.displayStudents()
+                        monash.displayUnits()
+                        monash.displayCourses()
 
                     if num1 == 7:
                         pass

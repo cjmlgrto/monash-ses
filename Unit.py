@@ -51,3 +51,6 @@ class Unit:
 
     def displayDetails(self):
         return 'Unit Code: ' + self.code + ', Title: ' + self.title
+
+    def addStudent(self, studID):
+        self.studentList.append(studID)

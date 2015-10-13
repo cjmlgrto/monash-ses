@@ -57,3 +57,5 @@ class Student:
        string = 'Student ID: ' + str(self.getStudID()) + ', Name: ' + str(self.getName())
        return string
 
+    def addUnit(self, unitCode):
+        self.unitArray.append(unitCode)
