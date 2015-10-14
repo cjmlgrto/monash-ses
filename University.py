@@ -4,8 +4,24 @@ from Unit import Unit
 from Course import Course
 
 class University:
+    """ Class to represent the University object, acts as a database for the student, unit and Course records.
+
+        Dependencies - None
+
+        Attributes - Title, the title you wish for the University
+
+    """
 
     def __init__(self, title):
+        """
+        :purpose: Initialises university class
+        :param title: the title of the university
+        :return: an initialised university object
+        """
+        """
+        :param title:
+        :return:
+        """
         self.studentList = {}
         self.unitList = {}
         self.courseList = {}
