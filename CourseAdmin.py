@@ -1,34 +1,14 @@
-__author__ = 'Josh'
-
 from University import University
 from Course import Course
 from Unit import Unit
 from Student import Student
 
 class CourseAdmin:
-    """ Class to allow interfacing between the other classes and the cli (command line interface)
-        
-        Dependencies - University, Course, Unit, Student
-        
-        Attributes: n/a
-    
-    """
 
     def __init__(self):
-        """
-        :purpose: initialises new courseAdmin classes
-        :param (attribute): see attribute descriptions above
-        :return: an initialised courseAdmin
-        """
         pass
 
     def createStudent(self, studID, uniObject):
-        """
-        :purpose: creates a new instance of a student via the student class, and adds it to the university class' database
-        :param (self, studID, uniObject): see descriptions in respective classes, Unit and Course
-        :return: n/a, but a new student added to the uni database
-        """
-
         courseCode = input("Please enter the code for the Course the student is enrolled in: ")
         if uniObject.courseExists(courseCode):
 
@@ -64,12 +44,6 @@ class CourseAdmin:
             return studID
 
     def createUnit(self, uniObject):
-        """
-        :purpose: creates a new instance of a unit via the unit class, and adds it to the university class' database
-        :param (self, studID, uniObject): see descriptions in respective classes, Unit and Course
-        :return: n/a, but a new unit added to the uni database
-        """
-
         unitObject = Unit()
         unitCode = input("Please enter Unit Code: ")
         unitObject.setCode(unitCode)
@@ -83,11 +57,6 @@ class CourseAdmin:
         uniObject.addUnit(unitObject)
 
     def createCourse(self, uniObject):
-        """
-        :purpose: creates a new instance of a course via the course class, and adds it to the university class' database
-        :param (self, studID, uniObject): see descriptions in respective classes, Unit and Course
-        :return: n/a, but a new course added to the uni database
-        """
         courseObject = Course()
         courseCode = input("Please enter Course Code: ")
         courseObject.setCode(courseCode)
@@ -101,11 +70,6 @@ class CourseAdmin:
         uniObject.addCourse(courseObject)
 
     def enrollStudent(self, uniObject):
-        """
-        :purpose: as it says, enrols a student into a unit by adding the student's ID to a unit, and a unit's ID to a student as attributes in a database
-        :param (self, uniObject): uniObject, the current instance of the University class
-        :return: n/a, but enrols a student into a unit
-        """
         studID = input("Please enter the student ID of the student you wish to enroll: ")
         if uniObject.studentExists(studID):
             unitCode = input("Please enter the unit code of the unit you wish to enroll in: ")
