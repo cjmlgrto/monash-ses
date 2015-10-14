@@ -143,8 +143,8 @@ class Student:
         :param (attribute): see attribute descriptions above
         :return: all attributes
         """
-       string = 'Student ID: ' + str(self.getStudID()) + ', Name: ' + str(self.getName())
-       return string
+        string = 'Student ID: ' + str(self.getStudID()) + ', Name: ' + str(self.getName())
+        return string
 
     def addUnit(self, unitCode):
         """
