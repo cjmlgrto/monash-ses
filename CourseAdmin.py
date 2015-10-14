@@ -85,8 +85,7 @@ class CourseAdmin:
                 uniObject.addUnit(unitObject)
                 uniObject.addStudent(studentObject)
 
-                print(studentObject.unitArray)
-                print(unitObject.studentList)
+                print("SUCCESS: " + studentObject.getName() + " enrolled in " + unitObject.getCode())
 
             else:
                 print("ERROR: Unit Code does not exist")
