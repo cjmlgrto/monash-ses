@@ -7,7 +7,7 @@ class Unit:
             - Code, e.g. FIT1010
             - Title, e.g. "Introduction to Software Engineering"
             - Description, e.g. "A unit about software engineering fundamentals"
-            - Sequences Offered, i.e. what units are to be taken with this
+            - Sequences Offered, i.e. where/when in the semester it is offered
             - Year Offered, e.g. "2015"
             - Student List, i.e. list of students in the unit
     
