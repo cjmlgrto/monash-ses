@@ -49,15 +49,15 @@ class CourseAdmin:
 			newStudent.setLName(lName)
 			fName = input("Please enter the student's last name: ")
 			newStudent.setFName(fName)
-            degreeType = input("Please enter the student's degree type (U for undergraduate or P for postgraduate): ")
+			degreeType = input("Please enter the student's degree type (U for undergraduate or P for postgraduate): ")
 			# validate
-            newStudent.setDegreeType(degreeType)
-            residencyType = input("Please enter the student's residency type (I for International, or D for Domestic):  ")
+			newStudent.setDegreeType(degreeType)
+			residencyType = input("Please enter the student's residency type (I for International, or D for Domestic):  ")
 			# validate
-            newStudent.setResidencyType(residencyType)
+			newStudent.setResidencyType(residencyType)
 			# validate
-            studyType = input("Please enter the student's study type (F for full time, P for part time): ")
-            newStudent.setStudyType(studyType)
+			studyType = input("Please enter the student's study type (F for full time, P for part time): ")
+			newStudent.setStudyType(studyType)
 			university.addStudent(newStudent)
 			print("\n" +
 			"SUCCESS: STUDENT RECORD CREATED"
@@ -74,7 +74,25 @@ class CourseAdmin:
 			return baseID
 	
 	# - Search Student
-	
+	def searchStudent(self,university):
+		ID = input("Please enter the student ID of the student you wish to display details of: ")
+		if university.studentExists(ID):
+			student = university.students[ID]
+			courseCode = student.getCourseCode()
+			course = university.courses[courseCode]
+			print("\n" +
+			student.displayDetails()
+			)
+			print("\n" +
+			"Studying: " + course.displayDetails()
+			)
+			#todo- iterate over student's units and print them out neatly
+		else:
+			print("\n" +
+			"ERROR: Student ID does not exist"
+			)
+			
+		
 	# - Enrol Student
 	def enrolStudent(self,university):
 		ID = input("Please enter the student ID of the student you wish to enroll: ")
