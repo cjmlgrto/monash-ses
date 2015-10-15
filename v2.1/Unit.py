@@ -48,6 +48,8 @@ class Unit:
         
     def setCourseList(self,newCourseList):
         self.courseList.append(newCourseList)
+		
+	# CLASS-SPECIFIC METHODS
 
     def displayDetails(self):
         return 'Unit Code: ' + self.code + ', Title: ' + self.title
