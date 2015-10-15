@@ -2,9 +2,9 @@
 # - A database of students, units and courses
 
 # Class Dependencies: 
-# - Student, (Student.py)
-# - Unit, (Unit.py)
 # - Course, (Course.py)
+# - Unit, (Unit.py)
+# - Student, (Student.py)
 
 # Attributes: 
 # - students, a dictionary/list of students in a University object
@@ -12,10 +12,10 @@
 # - courses, a dictionary/list of courses in a University object
 # - title, the unique title of a University object (e.g. "Monash")
 
-
-from Student import Student
-from Unit import Unit
 from Course import Course
+from Unit import Unit
+from Student import Student
+
 
 class University:
 	
