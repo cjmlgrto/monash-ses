@@ -1,10 +1,23 @@
+# Course CLASS
+# - An object that represents every unique course
+
+# Class Dependencies: 
+# - n/a
+
+# Attributes: 
+# - code, the unique course code (e.g. "S3001") 
+# - type, undergraduate/postgraduate
+# - name, the name of a course (e.g. "Bachelor of Science Advanced (Honours)")
+# - units, a list of included units in a course
+
+
 class Course:
     
     def __init__(self):
         self.code = ''
         self.type = ''
         self.name = ''
-        self.unitList = []
+        self.units = []
         
     # GET ATTRIBUTES
     
@@ -17,8 +30,8 @@ class Course:
     def getName(self):
         return self.name
         
-    def getUnitList(self):
-        return self.unitList
+    def getUnits(self):
+        return self.units
         
     # SET ATTRIBUTES
     
@@ -33,8 +46,8 @@ class Course:
 		
 	# CLASS-SPECIFIC METHODS
         
-    def AddToUnitList(self,newUnitList):
-        self.unitList.append(newUnitList)
+    def AddToUnits(self,newUnits):
+        self.Units.append(newUnits)
 
     def displayDetails(self):
         return 'Course Code: ' + self.code + ', Course Title: ' + self.name

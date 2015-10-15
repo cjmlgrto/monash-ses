@@ -1,3 +1,18 @@
+# Unit CLASS
+# - An object that represents every unique unit
+
+# Class Dependencies: 
+# - n/a
+
+# Attributes: 
+# - code, the unique unit code (e.g. "FIT1010") 
+# - title, the name of a unit (e.g. "Introduction to Software Engineering")
+# - description, the description of a unit
+# - sequencesOffered, which semester and location it is offered in (e.g. "S2 CLAYTON")
+# - yearOffered, which year it is offered in (e.g. "2015")
+# - courseList, a list of included courses in a unit
+# - studentList, a list of included students in a unit
+
 class Unit:
     
     def __init__(self):
