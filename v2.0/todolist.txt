@@ -4,3 +4,4 @@ TODOLIST:
 - Edit documentation @done
 - Finalise files for submission
 - Change implementation diagrams to reflect the current code(?)
+- Refactor code
