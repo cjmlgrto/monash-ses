@@ -62,7 +62,7 @@ class Student:
         self.degreeType = newDegreeType
 
     def setResidencyType(self, newResidencyType):
-        self.resIDencyType = newResidencyType
+        self.residencyType = newResidencyType
 
     def setCourseCode(self, newCourseCode):
         self.courseCode = newCourseCode

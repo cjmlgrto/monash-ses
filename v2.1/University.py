@@ -11,6 +11,7 @@
 # - units, a dictionary/list of units in a University object
 # - courses, a dictionary/list of courses in a University object
 # - title, the unique title of a University object (e.g. "Monash")
+# - baseID, an integer representing the very first student ID to be generated from for each new student (increments by 1 per new student created)
 
 from Course import Course
 from Unit import Unit
@@ -24,6 +25,7 @@ class University:
 		self.units = {}
 		self.courses = {}
 		self.title = title
+		self.baseID = 10000000
 		
 	# GET ATTRIBUTES
 	
