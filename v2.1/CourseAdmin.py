@@ -8,6 +8,21 @@ class CourseAdmin:
 	# UNIT METHODS
 	
 	# - Create Unit
+	def createUnit(self,university):
+		newUnit = Unit()
+		code = input("Please enter Unit code: ")
+		# validate
+		newUnit.setCode(code)
+		title = input("Please enter Unit title: ")
+		# validate
+		newUnit.setTitle(title)
+		university.addUnit(newUnit)
+		print("\n" +
+		"SUCCESS: UNIT RECORD CREATED"
+		)
+		print("\n" +
+		newUnit.displayDetails()
+		)
 	
 	# - Search Unit
 	
@@ -29,6 +44,7 @@ class CourseAdmin:
 			newStudent = Student()
 			newStudent.setID(str(baseID))
 			newStudent.setCourseCode(courseCode)
+			# let the input begin
 			lName = input("Please enter the student's last name: ")
 			newStudent.setLName(lName)
 			fName = input("Please enter the student's last name: ")
@@ -42,12 +58,14 @@ class CourseAdmin:
 			# validate
             studyType = input("Please enter the student's study type (F for full time, P for part time): ")
             newStudent.setStudyType(studyType)
+			university.addStudent(newStudent)
 			print("\n" +
 			"SUCCESS: STUDENT RECORD CREATED"
 			)
 			print("\n" +
 			newStudent.displayDetails()
 			)
+			# increment student count / student ID by 1 per new student created
 			return baseID + 1
 		else:
 			print("\n" +
@@ -58,6 +76,29 @@ class CourseAdmin:
 	# - Search Student
 	
 	# - Enrol Student
+	def enrolStudent(self,university):
+		ID = input("Please enter the student ID of the student you wish to enroll: ")
+		if university.studentExists(ID):
+			code = input("Please enter the unit code of the unit you wish to enroll in: ")
+			if university.unitExists(code):
+				unit = university.units[code]
+				student = university.students[ID]
+				unit.addStudent(ID)
+				student.addUnit(code)
+				# merge back into University database
+				university.addUnit(unit)
+				university.addStudent(student)
+				print("\n" +
+				"SUCCESS: " + student.getName() + " enrolled in " + unit.getCode() + "(" + unit.getTitle() + ")"
+				)
+			else:
+				print("\n" +
+				"ERROR: Unit code does not exist"
+				)
+		else:
+			print("\n" +
+			"ERROR: Student ID does not exist"
+			)
 	
 	# - Display Undergraduate Students
 	
@@ -79,6 +120,21 @@ class CourseAdmin:
 	# COURSE METHODS
 	
 	# - Create Course
+	def createCourse(self,university):
+		newCourse = Course()
+		code = input("Please enter Course Code: ")
+		# validate
+		newCourse.setCode(code)
+		name = input("Please enter Course Name: ")
+		# validate
+		newCourse.setName(name)
+		university.addCourse(newCourse)
+		print("\n" +
+		"SUCCESS: COURSE RECORD CREATED"
+		)
+		print("\n" +
+		newCourse.displayDetails()
+		)
 	
 	# - Search Course
 	
