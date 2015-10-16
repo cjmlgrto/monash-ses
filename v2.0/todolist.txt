@@ -1,7 +1,0 @@
-TODOLIST:
-- Validation
-- Change menu (following the use case diagram)
-- Edit documentation @done
-- Finalise files for submission
-- Change implementation diagrams to reflect the current code(?)
-- Refactor code
