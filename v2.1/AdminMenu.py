@@ -1,3 +1,5 @@
+# todo: documentation & validation
+
 import sys
 from CourseAdmin import CourseAdmin
 from University import University
