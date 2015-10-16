@@ -76,7 +76,7 @@ class University:
 			
 	def addCourse(self,courseObject):
 		if isinstance(courseObject, Course):
-			self.units[courseObject.getCode()] = courseObject
+			self.courses[courseObject.getCode()] = courseObject
 		else:
 			print("\n" +
 			"ERROR: " + courseObject + "is not a Course Object"

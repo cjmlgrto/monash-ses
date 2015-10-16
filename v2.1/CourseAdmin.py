@@ -39,7 +39,7 @@ class CourseAdmin:
 	
 	# - Create Student
 	def createStudent(self,baseID,university):
-		courseCode = input("Please enter the code for the Course the student is enrolled in: ")
+		courseCode = input("Please enter a course code: ")
 		if university.courseExists(courseCode):
 			newStudent = Student()
 			newStudent.setID(str(baseID))

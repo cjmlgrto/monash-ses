@@ -53,10 +53,10 @@ class Student:
         self.ID = newID
 
     def setLName(self, newLName):
-        self.lName = newlName
+        self.lName = newLName
 
     def setFName(self, newFName):
-        self.fName = newfName
+        self.fName = newFName
 
     def setDegreeType(self, newDegreeType):
         self.degreeType = newDegreeType

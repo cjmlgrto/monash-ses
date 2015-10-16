@@ -5,6 +5,7 @@ from Course import Course
 from Unit import Unit
 from Student import Student
 
+baseID = 10000000
 admin = CourseAdmin()
 monash = University("Monash University")
 
@@ -76,6 +77,27 @@ def unitsMenu():
 	"\n [6] Delete Unit" +
 	"\n [7] Back to Main Menu"
 	)
+	command = promptCommand(1,7)
+	if int(command) == 1:
+		admin.createUnit(monash)
+		unitsMenu()
+	if int(command) == 2:
+		print("still needs work!")
+		unitsMenu()
+	if int(command) == 3:
+		print("still needs work!")
+		unitsMenu()
+	if int(command) == 4:
+		print("still needs work!")
+		unitsMenu()
+	if int(command) == 5:
+		print("still needs work!")
+		unitsMenu()
+	if int(command) == 6:
+		print("still needs work!")
+		unitsMenu()
+	if int(command) == 7:
+		mainMenu()
 	
 def studentsMenu():
 	print("\n" +
@@ -94,6 +116,42 @@ def studentsMenu():
 	"\n [11] Delete Student" +
 	"\n [12] Back to Main Menu"
 	)
+	command = promptCommand(1,12)
+	if int(command) == 1:
+		admin.createStudent(baseID,monash)
+		studentsMenu()
+	if int(command) == 2:
+		admin.searchStudent(monash)
+		studentsMenu()
+	if int(command) == 3:
+		admin.enrolStudent(monash)
+		studentsMenu()
+	if int(command) == 4:
+		print("still needs work!")
+		studentsMenu()
+	if int(command) == 5:
+		print("still needs work!")
+		studentsMenu()
+	if int(command) == 6:
+		print("still needs work!")
+		studentsMenu()
+	if int(command) == 7:
+		print("still needs work!")
+		studentsMenu()
+	if int(command) == 8:
+		print("still needs work!")
+		studentsMenu()
+	if int(command) == 9:
+		print("still needs work!")
+		studentsMenu()
+	if int(command) == 10:
+		print("still needs work!")
+		studentsMenu()
+	if int(command) == 11:
+		print("still needs work!")
+		studentsMenu()
+	if int(command) == 12:
+		mainMenu()
 	
 def promptCommand(lowest,highest):
 	valid = False
