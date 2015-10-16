@@ -5,13 +5,18 @@ from Course import Course
 from Unit import Unit
 from Student import Student
 
+# INITIALISE GLOBAL VARIABLES
+# - baseID, the first iteration of the student count
+# - admin, a new CourseAdmin instance
+# - monash, a new University instance
+
 baseID = 10000000
 admin = CourseAdmin()
 monash = University("Monash University")
 
 def main():
 	mainMenu()
-	
+
 def mainMenu():
 	print("\n" +
 	"\n---------------------------------" +
@@ -82,7 +87,7 @@ def unitsMenu():
 		admin.createUnit(monash)
 		unitsMenu()
 	if int(command) == 2:
-		print("still needs work!")
+		admin.searchUnit(monash)
 		unitsMenu()
 	if int(command) == 3:
 		print("still needs work!")

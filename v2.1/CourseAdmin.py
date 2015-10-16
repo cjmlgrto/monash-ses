@@ -17,15 +17,28 @@ class CourseAdmin:
 		# validate
 		newUnit.setTitle(title)
 		university.addUnit(newUnit)
-		print("\n" +
-		"SUCCESS: UNIT RECORD CREATED"
-		)
+		print("SUCCESS: UNIT RECORD CREATED")
 		print("\n" +
 		newUnit.displayDetails()
 		)
 	
 	# - Search Unit
-	
+	def searchUnit(self,university):
+		code = input("Enter a Unit code: ")
+		if university.unitExists(code):
+			unit = university.units[code]
+			print("\n" +
+			unit.displayDetails()
+			)
+			# iterate over each student enrolled
+			print("\n" +
+			"Students enrolled in this unit:"
+			)
+			for ID in unit.studentList:
+				student = university.students[ID]
+				print("\n" + student.fName + " " + student.lName + " (" + student.ID + ")")
+		else:
+			print("ERROR: Unit code does not exist")
 	# - Display All Units
 	
 	# - Display Students in Unit
@@ -59,18 +72,14 @@ class CourseAdmin:
 			studyType = input("Please enter the student's study type (F for full time, P for part time): ")
 			newStudent.setStudyType(studyType)
 			university.addStudent(newStudent)
-			print("\n" +
-			"SUCCESS: STUDENT RECORD CREATED"
-			)
+			print("SUCCESS: STUDENT RECORD CREATED")
 			print("\n" +
 			newStudent.displayDetails()
 			)
 			# increment student count / student ID by 1 per new student created
 			return baseID + 1
 		else:
-			print("\n" +
-			"ERROR: Course code does not exist"
-			)
+			print("ERROR: Course code does not exist")
 			return baseID
 	
 	# - Search Student
@@ -86,11 +95,13 @@ class CourseAdmin:
 			print("\n" +
 			"Studying: " + course.displayDetails()
 			)
-			#todo- iterate over student's units and print them out neatly
+			# iterate over student's units and print them out neatly
+			print("\n" + "Units enrolled in:")
+			for code in student.units:
+				unit = university.units[code]
+				print("\n" + unit.title + " (" + unit.code + ")")
 		else:
-			print("\n" +
-			"ERROR: Student ID does not exist"
-			)
+			print("ERROR: Student ID does not exist")
 			
 		
 	# - Enrol Student
@@ -106,17 +117,11 @@ class CourseAdmin:
 				# merge back into University database
 				university.addUnit(unit)
 				university.addStudent(student)
-				print("\n" +
-				"SUCCESS: " + student.getName() + " enrolled in " + unit.getCode() + "(" + unit.getTitle() + ")"
-				)
+				print("SUCCESS: " + student.getName() + " enrolled in " + unit.getCode() + "(" + unit.getTitle() + ")")
 			else:
-				print("\n" +
-				"ERROR: Unit code does not exist"
-				)
+				print("ERROR: Unit code does not exist")
 		else:
-			print("\n" +
-			"ERROR: Student ID does not exist"
-			)
+			print("ERROR: Student ID does not exist")
 	
 	# - Display Undergraduate Students
 	
@@ -147,15 +152,21 @@ class CourseAdmin:
 		# validate
 		newCourse.setName(name)
 		university.addCourse(newCourse)
-		print("\n" +
-		"SUCCESS: COURSE RECORD CREATED"
-		)
+		print("SUCCESS: COURSE RECORD CREATED")
 		print("\n" +
 		newCourse.displayDetails()
 		)
 	
 	# - Search Course
-	
+	def searchCourse(self,university):
+		code = input("Please enter a course code")
+		if university.courseExists(code):
+			course = university.course[code]
+			print("\n" +
+			course.displayDetails()
+			)
+			""
+		
 	# - Display All Courses
 	
 	# - Display Units in Course

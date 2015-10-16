@@ -18,6 +18,7 @@ class Course:
         self.type = ''
         self.name = ''
         self.units = []
+		self.studentList = []
         
     # GET ATTRIBUTES
     
@@ -51,3 +52,6 @@ class Course:
 
     def displayDetails(self):
         return 'Course Code: ' + self.code + ', Course Title: ' + self.name
+		
+    def addStudent(self,ID):
+        self.studentList.append(ID)
