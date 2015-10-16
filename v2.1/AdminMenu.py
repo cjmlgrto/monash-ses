@@ -5,15 +5,16 @@ from Course import Course
 from Unit import Unit
 from Student import Student
 
+admin = CourseAdmin()
+monash = University("Monash University")
+
 def main():
-	baseID = 10000000
-	CA = CourseAdmin()
-	Monash = University("Monash University")
 	mainMenu()
 	
 def mainMenu():
 	print("\n" +
-	"Welcome!" +
+	"\n---------------------------------" +
+	"\nWelcome!" +
 	"\n [1] Courses" + 
 	"\n [2] Units" +
 	"\n [3] Students" +
@@ -31,7 +32,8 @@ def mainMenu():
 	
 def coursesMenu():
 	print("\n" +
-	"COURSES OPTIONS" +
+	"\n---------------------------------" +
+	"\nCOURSES OPTIONS" +
 	"\n [1] Create Course" + 
 	"\n [2] Search Course" +
 	"\n [3] Display All Courses" +
@@ -40,10 +42,32 @@ def coursesMenu():
 	"\n [6] Delete Course" +
 	"\n [7] Back to Main Menu"
 	)
+	command = promptCommand(1,7)
+	if int(command) == 1:
+		admin.createCourse(monash)
+		coursesMenu()
+	if int(command) == 2:
+		print("still needs work!")
+		coursesMenu()
+	if int(command) == 3:
+		print("still needs work!")
+		coursesMenu()
+	if int(command) == 4:
+		print("still needs work!")
+		coursesMenu()
+	if int(command) == 5:
+		print("still needs work!")
+		coursesMenu()
+	if int(command) == 6:
+		print("still needs work!")
+		coursesMenu()
+	if int(command) == 7:
+		mainMenu()
 	
 def unitsMenu():
 	print("\n" +
-	"UNITS OPTIONS" +
+	"\n---------------------------------" +
+	"\nUNITS OPTIONS" +
 	"\n [1] Create Unit" + 
 	"\n [2] Search Unit" +
 	"\n [3] Display All Units" +
@@ -55,7 +79,8 @@ def unitsMenu():
 	
 def studentsMenu():
 	print("\n" +
-	"STUDENTS OPTIONS" +
+	"\n---------------------------------" +
+	"\nSTUDENTS OPTIONS" +
 	"\n [1] Create Student" + 
 	"\n [2] Search Student" +
 	"\n [3] Enrol Student" +
