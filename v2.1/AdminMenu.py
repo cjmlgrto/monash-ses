@@ -150,10 +150,10 @@ def studentsMenu():
 		print("still needs work!")
 		studentsMenu()
 	if int(command) == 10:
-		print("still needs work!")
+		admin.editStudentDetails(monash)
 		studentsMenu()
 	if int(command) == 11:
-		print("still needs work!")
+		admin.deleteStudent(monash)
 		studentsMenu()
 	if int(command) == 12:
 		mainMenu()

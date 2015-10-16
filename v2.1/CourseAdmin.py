@@ -161,8 +161,45 @@ class CourseAdmin:
 	# - Is Student enrolled in Course?
 	
 	# - Edit Student Details
+	def editStudentDetails(self, university):
+		ID = input("Enter a Student ID: ")
+		if university.studentExists(ID):
+			student = university.students[ID]
+			courseCode = student.course
+			
+			university.students.pop(ID,None)
+			newStudent = Student()
+			newStudent.setID(ID)
+			newStudent.setCourse(courseCode)
+			
+			lName = input("Enter a Last name: ")
+			newStudent.setLName(lName)
+			fName = input("Enter a First name: ")
+			newStudent.setFName(fName)
+			degreeType = input("[U] Undergraduate / [P] Postgraduate: ")
+			newStudent.setDegreeType(degreeType)
+			residencyType = input("[D] Domestic / [I] International: ")
+			newStudent.setResidencyType(residencyType)
+			studyType = input("[F] Full-time / [P] Part-time: ")
+			newStudent.setStudyType(studyType)
+
+			university.addStudent(newStudent)
+			
+			print("SUCCESS: STUDENT RECORD EDITED")
+			newStudent.displayDetails()
+		else:
+			print("ERROR: Student ID does not exist")
 	
 	# - Delete Student
+	def deleteStudent(self,university):
+		ID = input("Enter a Student ID: ")
+		if university.studentExists(ID):
+			student = university.students[ID]
+			name = student.getName()
+			university.students.pop(ID,None)
+			print("SUCCESS:" + name + " has been removed from the system")
+		else:
+			print("ERROR: Student ID does not exist")
 	
 	
 	# COURSE METHODS
@@ -190,7 +227,7 @@ class CourseAdmin:
 			print("ERROR: Course code does not exist")
 		
 	# - Display All Courses
-	def displayAllCourse(self,university):
+	def displayAllCourses(self,university):
 		university.displayCourses()
 	
 	# - Display Units in Course
