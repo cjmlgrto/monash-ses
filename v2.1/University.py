@@ -21,11 +21,10 @@ from Student import Student
 class University:
 	
 	def __init__(self,title):
-		self.students = {}
-		self.units = {}
-		self.courses = {}
 		self.title = title
-		self.baseID = 10000000
+		self.students = {}
+		self.courses = {}
+		self.units = {}
 		
 	# GET ATTRIBUTES
 	
@@ -33,54 +32,39 @@ class University:
 		return self.title
 		
 	def displayStudents(self):
-		print("\n" +
-		str(self.title) + " has " + str(len(self.students)) + " students."
-		)
+		print(self.title + " has " str(len(self.students)) + "students:")
 		for ID, student in self.students.items():
-			print(student.displayDetails())	
+			print("\n" + student.displayDetails)
 		
 	def displayUnits(self):
-		print("\n" +
-		str(self.title) + " has " + str(len(self.units)) + " units."
-		)
+		print(self.title + " has " str(len(self.students)) + "units:")
 		for code, unit in self.units.items():
-			print(student.displayDetails())
+			print("\n" + unit.displayDetails)
 			
 	def displayCourses(self):
-		print("\n" +
-		str(self.title) + " has " + str(len(self.courses)) + " courses."
-		)
+		print(self.title + " has " str(len(self.students)) + "courses:")
 		for code, course in self.courses.items():
-			print(course.displayDetails())
+			print("\n" + course.displayDetails)
 		
 	# SET ATTRIBUTES
-	
-	def setTitle(self,newTitle):
-		self.title = newTitle
 		
 	def addStudent(self,studentObject):
 		if isinstance(studentObject, Student):
 			self.students[studentObject.getID()] = studentObject
 		else:
-			print("\n" +
-			"ERROR: " + studentObject + "is not a Student Object"
-			)
+			print("ERROR: " + studentObject + "is not a Student Object")
 			
 	def addUnit(self,unitObject):
 		if isinstance(unitObject, Unit):
 			self.units[unitObject.getCode()] = unitObject
 		else:
-			print("\n" +
-			"ERROR: " + unitObject + "is not a Unit Object"
-			)
+			print("ERROR: " + unitObject + "is not a Unit Object")
 			
 	def addCourse(self,courseObject):
 		if isinstance(courseObject, Course):
 			self.courses[courseObject.getCode()] = courseObject
 		else:
-			print("\n" +
-			"ERROR: " + courseObject + "is not a Course Object"
-			)
+			print("ERROR: " + courseObject + "is not a Course Object")
 			
 		
 	# CHECKING ATTRIBUTE/OBJECT EXISTENCE
