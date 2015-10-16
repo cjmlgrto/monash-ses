@@ -53,7 +53,7 @@ def coursesMenu():
 		admin.createCourse(monash)
 		coursesMenu()
 	if int(command) == 2:
-		print("still needs work!")
+		admin.searchCourse(monash)
 		coursesMenu()
 	if int(command) == 3:
 		print("still needs work!")

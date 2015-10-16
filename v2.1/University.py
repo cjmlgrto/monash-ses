@@ -32,17 +32,17 @@ class University:
 		return self.title
 		
 	def displayStudents(self):
-		print(self.title + " has " str(len(self.students)) + "students:")
+		# print(self.title + " has " len(self.students) + "students:")
 		for ID, student in self.students.items():
 			print("\n" + student.displayDetails)
 		
 	def displayUnits(self):
-		print(self.title + " has " str(len(self.students)) + "units:")
+		# print(self.title + " has " len(self.students) + "units:")
 		for code, unit in self.units.items():
 			print("\n" + unit.displayDetails)
 			
 	def displayCourses(self):
-		print(self.title + " has " str(len(self.students)) + "courses:")
+		# print(self.title + " has " len(self.students) + "courses:")
 		for code, course in self.courses.items():
 			print("\n" + course.displayDetails)
 		

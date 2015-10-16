@@ -27,7 +27,7 @@ class CourseAdmin:
 			unit = university.units[code]
 			unit.displayDetails()
 			print("Students enrolled in this unit:")
-			for ID in unit.studentList:
+			for ID in unit.students:
 				student = university.students[ID]
 				print("\n" + student.fName + " " + student.lName + " (" + student.ID + ")")
 		else:
@@ -46,12 +46,12 @@ class CourseAdmin:
 	
 	# - Create Student
 	def createStudent(self,baseID,university):
-		course = input("Enter a Course code: ")
+		courseCode = input("Enter a Course code: ")
 		if university.courseExists(courseCode):
 			
 			newStudent = Student()
 			newStudent.setID(str(baseID))
-			newStudent.setCourse(course)
+			newStudent.setCourse(courseCode)
 			
 			lName = input("Enter a Last name: ")
 			newStudent.setLName(lName)
@@ -146,9 +146,9 @@ class CourseAdmin:
 	
 	# - Search Course
 	def searchCourse(self,university):
-		code = input("Please enter a course code")
+		code = input("Please enter a course code: ")
 		if university.courseExists(code):
-			course = university.course[code]
+			course = university.courses[code]
 			course.displayDetails()
 		
 	# - Display All Courses

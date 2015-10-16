@@ -13,46 +13,47 @@
 
 
 class Course:
-    
-    def __init__(self):
-        self.code = ''
-        self.type = ''
-        self.name = ''
-        self.units = []
+	
+	def __init__(self):
+		self.code = ''
+		self.type = ''
+		self.name = ''
 		self.students = []
-        
-    # GET ATTRIBUTES
+		self.units = []
+		
+
+	# GET ATTRIBUTES
     
-    def getCode(self):
-        return self.code
+	def getCode(self):
+		return self.code
         
-    def getType(self):
-        return self.type
+	def getType(self):
+		return self.type
         
-    def getName(self):
-        return self.name
+	def getName(self):
+		return self.name
         
-    def getUnits(self):
-        return self.units
+	def getUnits(self):
+		return self.units
 		
 	def displayDetails(self):
 		print(self.code + " - " + self.name)
         
     # SET ATTRIBUTES
     
-    def setCode(self,newCode):
-        self.code = newCode
+	def setCode(self,newCode):
+		self.code = newCode
         
-    def setType(self,newType):
-        self.type = newType
+	def setType(self,newType):
+		self.type = newType
         
-    def setName(self,newName):
-        self.name = newName
+	def setName(self,newName):
+		self.name = newName
 		
-    def addUnit(self, unitCode):
-        self.units.append(unitCode)
+	def addUnit(self, unitCode):
+		self.units.append(unitCode)
 		
-    def addStudent(self,ID):
-        self.students.append(ID)
+	def addStudent(self,ID):
+		self.students.append(ID)
 		
    
