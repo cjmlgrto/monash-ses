@@ -1,3 +1,4 @@
+import sys
 from CourseAdmin import CourseAdmin
 from University import University
 from Course import Course
@@ -18,6 +19,15 @@ def mainMenu():
 	"\n [3] Students" +
 	"\n [4] Quit"
 	)
+	command = promptCommand(1,4)
+	if int(command) == 1:
+		coursesMenu()
+	if int(command) == 2:
+		unitsMenu()
+	if int(command) == 3:
+		studentsMenu()
+	if int(command) == 4:
+		sys.exit(0)
 	
 def coursesMenu():
 	print("\n" +
@@ -59,6 +69,18 @@ def studentsMenu():
 	"\n [11] Delete Student" +
 	"\n [12] Back to Main Menu"
 	)
+	
+def promptCommand(lowest,highest):
+	valid = False
+	while not valid:
+		command = input("\nChoose: ")
+		if int(command) >= lowest and int(command) <= highest:
+			return command
+			valid = True
+		else:
+			print("\n" +
+			"Error! Please try again."
+			)
 	
 
 # Run on startup	
