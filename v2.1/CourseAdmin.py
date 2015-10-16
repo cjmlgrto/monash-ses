@@ -34,13 +34,49 @@ class CourseAdmin:
 			print("ERROR: Unit code does not exist")
 			
 	# - Display All Units
-	
+	def displayAllUnits(self,university):
+		university.displayUnits()
+		
 	# - Display Students in Unit
-	
+	def displayStudentsInUnit(self,university):
+		code = input("Enter a Unit code: ")
+		if university.unitExists(code):
+			unit = university.units[code]
+			print(unit.title + " has " + len(unit.students) + " students:")
+			for ID in unit.students:
+				student = university.students[ID]
+				print("\n" + student.fName + " " + student.lName + " (" + student.ID + ")")
+		else:
+			print("ERROR: Unit code does not exist")
+			
 	# - Edit Unit Details
+	def editUnitDetails(self,university):
+		code = input("Enter a Unit code: ")
+		if university.unitExists(code):
+			university.units.pop(code, None)
+			newUnit = Unit()
+			code = input("New unit code: ")
+			# validate
+			newUnit.setCode(code)
+			title = input("New unit title: ")
+			# validate
+			newUnit.setTitle(title)
+			university.addUnit(newUnit)
+			print("SUCCESS: UNIT RECORD CREATED")
+			newUnit.displayDetails()
+		else:
+			print("ERROR: Unit code does not exist")
 	
 	# - Delete Unit
-	
+	def deleteUnit(self,university):
+		code = input("Enter a Unit code: ")
+		if university.unitExists(code):
+			unit = university.units[code]
+			title = unit.title
+			university.units.pop(code, None)
+			print("SUCCESS: " + title + " has been deleted")
+		else:
+			print("ERROR: Unit code does not exist")
 	
 	# STUDENT METHODS
 	
@@ -134,10 +170,10 @@ class CourseAdmin:
 	# - Create Course
 	def createCourse(self,university):
 		newCourse = Course()
-		code = input("Please enter Course Code: ")
+		code = input("Enter a Course code: ")
 		# validate
 		newCourse.setCode(code)
-		name = input("Please enter Course Name: ")
+		name = input("Enter a Course name: ")
 		# validate
 		newCourse.setName(name)
 		university.addCourse(newCourse)
@@ -146,15 +182,53 @@ class CourseAdmin:
 	
 	# - Search Course
 	def searchCourse(self,university):
-		code = input("Please enter a course code: ")
+		code = input("Enter a Course code: ")
 		if university.courseExists(code):
 			course = university.courses[code]
 			course.displayDetails()
+		else:
+			print("ERROR: Course code does not exist")
 		
 	# - Display All Courses
+	def displayAllCourse(self,university):
+		university.displayCourses()
 	
 	# - Display Units in Course
+	def displayUnitsInCourse(self,university):
+		courseCode = input("Enter a Course code: ")
+		if university.courseExists(courseCode):
+			course = university.courses[courseCode]
+			for code in course.units:
+				unit = university.units[code]
+				print("\n" + unit.title + " - " + unit.code)
+		else:
+			print("ERROR: Course code does not exist")
 	
 	# - Edit Course Details
+	def editCourseDetails(self,university):
+		code = input("Enter a Course code: ")
+		if university.courseExists(code):
+			university.courses.pop(code,None)
+			newCourse = Course()
+			code = input("Enter a Course code: ")
+			# validate
+			newCourse.setCode(code)
+			name = input("Enter a Course name: ")
+			# validate
+			newCourse.setName(name)
+			university.addCourse(newCourse)
+			print("SUCCESS: COURSE RECORD EDITED")
+			newCourse.displayDetails()
+		else:
+			print("ERROR: Course code does not exist")
 	
 	# - Delete Course
+	def deleteCourse(self,university):
+		code = input("Enter a Course code: ")
+		if university.courseExists(code):
+			course = university.courses[code]
+			name = course.name
+			university.courses.pop(code,None)
+			print("SUCCESS: " + name + " has been deleted")
+		else:
+			print("ERROR: Course code does not exist")

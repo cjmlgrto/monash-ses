@@ -31,20 +31,15 @@ class University:
 	def getTitle(self):
 		return self.title
 		
-	def displayStudents(self):
-		# print(self.title + " has " len(self.students) + "students:")
-		for ID, student in self.students.items():
-			print("\n" + student.displayDetails)
-		
 	def displayUnits(self):
 		# print(self.title + " has " len(self.students) + "units:")
 		for code, unit in self.units.items():
-			print("\n" + unit.displayDetails)
+			unit.displayDetails()
 			
 	def displayCourses(self):
 		# print(self.title + " has " len(self.students) + "courses:")
 		for code, course in self.courses.items():
-			print("\n" + course.displayDetails)
+			course.displayDetails()
 		
 	# SET ATTRIBUTES
 		

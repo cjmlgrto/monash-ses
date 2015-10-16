@@ -56,16 +56,16 @@ def coursesMenu():
 		admin.searchCourse(monash)
 		coursesMenu()
 	if int(command) == 3:
-		print("still needs work!")
+		admin.displayAllCourses(monash)
 		coursesMenu()
 	if int(command) == 4:
-		print("still needs work!")
+		admin.displayUnitsInCourse(monash)
 		coursesMenu()
 	if int(command) == 5:
-		print("still needs work!")
+		admin.editCourseDetails(monash)
 		coursesMenu()
 	if int(command) == 6:
-		print("still needs work!")
+		admin.deleteCourse(monash)
 		coursesMenu()
 	if int(command) == 7:
 		mainMenu()
@@ -90,16 +90,16 @@ def unitsMenu():
 		admin.searchUnit(monash)
 		unitsMenu()
 	if int(command) == 3:
-		print("still needs work!")
+		admin.displayAllUnits(monash)
 		unitsMenu()
 	if int(command) == 4:
-		print("still needs work!")
+		admin.displayStudentsInUnit(monash)
 		unitsMenu()
 	if int(command) == 5:
-		print("still needs work!")
+		admin.editUnitDetails(monash)
 		unitsMenu()
 	if int(command) == 6:
-		print("still needs work!")
+		admin.deleteUnit(monash)
 		unitsMenu()
 	if int(command) == 7:
 		mainMenu()
