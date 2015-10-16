@@ -19,13 +19,13 @@ class Student:
 
     def __init__(self):
         self.ID = ''
-        self.units = []
         self.fName = ''
         self.lName = ''
         self.degreeType = ''
         self.residencyType = ''
         self.studyType = ''
-        self.courseCode = ''
+        self.course = ''
+        self.units = []
         
     # GET ATTRIBUTES
     
@@ -39,13 +39,16 @@ class Student:
         return self.degreeType
 		
     def getResidencyType(self):
-        return self.resIDencyType
+        return self.residencyType
 		
-    def getCourseCode(self):
-        return self.courseCode
+    def getCourse(self):
+        return self.course
 		
     def getStudyType(self):
         return self.studyType
+		
+    def displayDetails(self):
+        print(self.ID + " - " + self.fName + " " + self.lName)
     
     # SET ATTRIBUTES
 
@@ -53,10 +56,10 @@ class Student:
         self.ID = newID
 
     def setLName(self, newLName):
-        self.lName = newlName
+        self.lName = newLName
 
     def setFName(self, newFName):
-        self.fName = newfName
+        self.fName = newFName
 
     def setDegreeType(self, newDegreeType):
         self.degreeType = newDegreeType
@@ -64,17 +67,13 @@ class Student:
     def setResidencyType(self, newResidencyType):
         self.residencyType = newResidencyType
 
-    def setCourseCode(self, newCourseCode):
-        self.courseCode = newCourseCode
+    def setCourse(self, newCourse):
+        self.course = newCourse
 
     def setStudyType(self, newStudyType):
         self.studyType = newStudyType
-		
-	# CLASS-SPECIFIC METHODS
-
-    def displayDetails(self):
-        string = 'Student ID: ' + str(self.getID()) + ', Name: ' + str(self.getName())
-        return string
 
     def addUnit(self, unitCode):
         self.units.append(unitCode)
+
+    
