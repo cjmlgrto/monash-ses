@@ -124,6 +124,7 @@ def studentsMenu():
 	command = promptCommand(1,12)
 	if int(command) == 1:
 		admin.createStudent(baseID,monash)
+		# input("Hit enter to return to menu")
 		studentsMenu()
 	if int(command) == 2:
 		admin.searchStudent(monash)
@@ -132,22 +133,22 @@ def studentsMenu():
 		admin.enrolStudent(monash)
 		studentsMenu()
 	if int(command) == 4:
-		print("still needs work!")
+		admin.displayUndergraduateStudents(monash)
 		studentsMenu()
 	if int(command) == 5:
-		print("still needs work!")
+		admin.displayPostgraduateStudents(monash)
 		studentsMenu()
 	if int(command) == 6:
-		print("still needs work!")
+		admin.displayDomesticStudents(monash)
 		studentsMenu()
 	if int(command) == 7:
-		print("still needs work!")
+		admin.displayInternationalStudents(monash)
 		studentsMenu()
 	if int(command) == 8:
-		print("still needs work!")
+		admin.checkUnitEnrolment(monash)
 		studentsMenu()
 	if int(command) == 9:
-		print("still needs work!")
+		admin.checkCourseEnrolment(monash)
 		studentsMenu()
 	if int(command) == 10:
 		admin.editStudentDetails(monash)
@@ -162,7 +163,7 @@ def promptCommand(lowest,highest):
 	valid = False
 	while not valid:
 		command = input("\nChoose: ")
-		if int(command) >= lowest and int(command) <= highest:
+		if command != "" and int(command) >= lowest and int(command) <= highest:
 			return command
 			valid = True
 		else:

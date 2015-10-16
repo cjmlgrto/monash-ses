@@ -149,16 +149,61 @@ class CourseAdmin:
 			print("ERROR: Student ID does not exist")
 	
 	# - Display Undergraduate Students
+	def displayUndergraduateStudents(self,university):
+		for ID, student in university.students.items():
+			if student.degreeType == "U" or student.degreeType == "u":
+				print(student.ID + " - " + student.getName())
+		
 	
 	# - Display Postgraduate Students
+	def displayPostgraduateStudents(self,university):
+		for ID, student in university.students.items():
+			if student.degreeType == "P" or student.degreeType == "p":
+				print(student.ID + " - " + student.getName())
 	
 	# - Display Domestic Students
+	def displayDomesticStudents(self,university):
+		for ID, student in university.students.items():
+			if student.residencyType == "D" or student.residencyType == "d":
+				print(student.ID + " - " + student.getName())
 	
 	# - Display International Students
+	def displayInternationalStudents(self,university):
+		for ID, student in university.students.items():
+			if student.residencyType == "I" or student.residencyType == "i":
+				print(student.ID + " - " + student.getName())
 	
 	# - Is Student enrolled in Unit?
+	def checkUnitEnrolment(self,university):
+		ID = input("Enter a Student ID: ")
+		if university.studentExists(ID):
+			code = input("Enter a Unit code: ")
+			if university.unitExists(code):
+				student = university.students[ID]
+				if code in student.units:
+					print(student.getName + " is enrolled in " + code)
+				else:
+					print(student.getName + " has not been enrolled in " + code)
+			else:
+				print("ERROR: Unit code does not exist")
+		else:
+			print("ERROR: Student ID does not exist")
 	
 	# - Is Student enrolled in Course?
+	def checkCourseEnrolment(self,university):
+		ID = input("Enter a Student ID: ")
+		if university.studentExists(ID):
+			code = input("Enter a Course code: ")
+			if university.courseExists(code):
+				student = university.students[ID]
+				if student.course == code:
+					print(student.getName + " is enrolled in " + code)
+				else:
+					print(student.getName + " has not been enrolled in " + code)
+			else:
+				print("ERROR: Course code does not exist")
+		else:
+			print("ERROR: Student ID does not exist")
 	
 	# - Edit Student Details
 	def editStudentDetails(self, university):
