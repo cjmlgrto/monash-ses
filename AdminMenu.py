@@ -1,4 +1,14 @@
-# todo: documentation & validation
+# AdminMenu
+# - The interface for the Monash SES
+
+# Class Dependencies: 
+# - sys, (~/dev)
+# - CourseAdmin, (CourseAdmin.py)
+# - University, (University.py)
+# - Course, (Course.py)
+# - Unit, (Unit.py)
+# - Student, (Student.py)
+# - Validate, (Validate.py)
 
 import sys
 from CourseAdmin import CourseAdmin
@@ -20,9 +30,8 @@ def main():
 	mainMenu()
 
 def mainMenu():
-	print("\n" +
-	"\n---------------------------------" +
-	"\nWelcome!" +
+	print("\nWELCOME, COURSE ADMIN!" +
+	"\n" +
 	"\n [1] Courses" + 
 	"\n [2] Units" +
 	"\n [3] Students" +
@@ -39,9 +48,8 @@ def mainMenu():
 		sys.exit(0)
 	
 def coursesMenu():
-	print("\n" +
-	"\n---------------------------------" +
-	"\nCOURSES OPTIONS" +
+	print("\nCOURSES OPTIONS" +
+	"\n" +
 	"\n [1] Create Course" + 
 	"\n [2] Search Course" +
 	"\n [3] Display All Courses" +
@@ -73,9 +81,8 @@ def coursesMenu():
 		mainMenu()
 	
 def unitsMenu():
-	print("\n" +
-	"\n---------------------------------" +
-	"\nUNITS OPTIONS" +
+	print("\nUNITS OPTIONS" +
+	"\n" +
 	"\n [1] Create Unit" + 
 	"\n [2] Search Unit" +
 	"\n [3] Display All Units" +
@@ -107,9 +114,8 @@ def unitsMenu():
 		mainMenu()
 	
 def studentsMenu():
-	print("\n" +
-	"\n---------------------------------" +
-	"\nSTUDENTS OPTIONS" +
+	print("\nSTUDENTS OPTIONS" +
+	"\n" +
 	"\n [1] Create Student" + 
 	"\n [2] Search Student" +
 	"\n [3] Enrol Student" +
@@ -164,14 +170,12 @@ def studentsMenu():
 def promptCommand(lowest,highest):
 	valid = False
 	while not valid:
-		command = input("\nChoose: ")
+		command = input("\nEnter a number to choose from above: ")
 		if command != "" and int(command) >= lowest and int(command) <= highest:
 			return command
 			valid = True
 		else:
-			print("\n" +
-			"Error! Please try again."
-			)
+			print("\nError! Please try again.")
 	
 
 # Run on startup	
