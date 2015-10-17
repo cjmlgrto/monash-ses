@@ -11,7 +11,7 @@ class Validate:
 	
 	def validateUnitCode(self,code):
 		# validate "code"
-		# if in correct, ask for it again via input("")
+		# if not correct, ask for it again via input("")
 		# if correct, return "code"
 		return code
 		

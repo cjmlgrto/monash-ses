@@ -1,5 +1,6 @@
 # AdminMenu
 # - The interface for the Monash SES
+# - Main functionality is to display a list of options and then run the commands
 
 # Class Dependencies: 
 # - sys, (~/dev)
@@ -27,6 +28,13 @@ admin = Enrolment()
 monash = University("Monash University")
 
 def main():
+	str = '''
+8b    d8  dP"Yb  88b 88    db    .dP"Y8 88  88    .dP"Y8 888888 .dP"Y8 
+88b  d88 dP   Yb 88Yb88   dPYb   `Ybo." 88  88    `Ybo." 88__   `Ybo." 
+88YbdP88 Yb   dP 88 Y88  dP__Yb  o.`Y8b 888888    o.`Y8b 88""   o.`Y8b 
+88 YY 88  YbodP  88  Y8 dP""""Yb 8bodP' 88  88    8bodP' 888888 8bodP'
+	'''
+	print(str)
 	mainMenu()
 
 def mainMenu():

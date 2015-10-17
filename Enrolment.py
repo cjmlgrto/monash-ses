@@ -1,4 +1,4 @@
-# CourseAdmin CLASS
+# Enrolment CLASS
 # - All the functions required for the Student Enrolment System
 
 # Class Dependencies: 
@@ -17,6 +17,9 @@ from Course import Course
 from Unit import Unit
 from Student import Student
 from Validate import Validate
+
+# Initialise global variables
+# - validator, a new instance of the Validate module
 
 validator = Validate()
 
