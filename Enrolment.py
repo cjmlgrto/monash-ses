@@ -19,7 +19,7 @@ from Student import Student
 from Validate import Validate
 
 # Initialise global variables
-# - validator, a new instance of the Validate module
+# - validator, a new instance of the Validate class
 
 validator = Validate()
 
@@ -33,14 +33,17 @@ class Enrolment:
 		print("CREATING A NEW UNIT:")
 		newUnit = Unit()
 		code = input("New unit code: ")
-		code = validator.validateUnitCode(code)
-		newUnit.setCode(code)
-		title = input("New unit title: ")
-		newUnit.setTitle(title)
-		university.addUnit(newUnit)
-		print("\nSUCCESS: UNIT RECORD CREATED: \n")
-		newUnit.displayDetails()
-		print("\n \n \n")
+		valid, code = validator.validateUnitCode(code)
+		if valid:
+			newUnit.setCode(code)
+			title = input("New unit title: ")
+			newUnit.setTitle(title)
+			university.addUnit(newUnit)
+			print("\nSUCCESS: UNIT RECORD CREATED: \n")
+			newUnit.displayDetails()
+			print("\n \n \n")
+		else:
+			print("ERROR: INVALID UNIT CODE FORMAT")
 	
 	# - Search Unit
 	def searchUnit(self,university):
@@ -131,15 +134,33 @@ class Enrolment:
 			newStudent.setLName(lName)
 			fName = input("Enter a First name: ")
 			newStudent.setFName(fName)
-			degreeType = input("[U] Undergraduate / [P] Postgraduate: ")
-			degreeType = validator.validateDegreeType(degreeType)
-			newStudent.setDegreeType(degreeType)
-			residencyType = input("[D] Domestic / [I] International: ")
-			residencyType = validator.validateResidencyType(residencyType)
-			newStudent.setResidencyType(residencyType)
-			studyType = input("[F] Full-time / [P] Part-time: ")
-			studyType = validator.validateStudyType(studyType)
-			newStudent.setStudyType(studyType)
+
+			validDegType = False
+			while not validDegType:
+				degreeType = input("[U] Undergraduate / [P] Postgraduate: ")
+				validDegType, degreeType = validator.validateDegreeType(degreeType)
+				if validDegType:
+					newStudent.setDegreeType(degreeType)
+				else:
+					print("ERROR: please enter either U or P")
+
+			validResType = False
+			while not validResType:
+				residencyType = input("[D] Domestic / [I] International: ")
+				validResType, residencyType = validator.validateResidencyType(residencyType)
+				if validResType:
+					newStudent.setResidencyType(residencyType)
+				else:
+					print("ERROR: please enter either D or I")
+
+			validStudType = False
+			while not validStudType:
+				studyType = input("[F] Full-time / [P] Part-time: ")
+				validStudType, studyType = validator.validateStudyType(studyType)
+				if validStudType:
+					newStudent.setStudyType(studyType)
+				else:
+					print("ERROR: please enter either F or P")
 			
 			course = university.courses[courseCode]
 			course.addStudent(newStudent.ID)
@@ -161,7 +182,7 @@ class Enrolment:
 		ID = input("Enter a Student ID: ")
 		if university.studentExists(ID):
 			student = university.students[ID]
-			courseCode = student.getCourseCode()
+			courseCode = university.getCourseCode()
 			course = university.courses[courseCode]
 			student.displayDetails()
 			print("Studying:")
@@ -329,15 +350,19 @@ class Enrolment:
 		print("CREATING A COURSE:")
 		newCourse = Course()
 		code = input("Enter a Course code: ")
-		code = validator.validateCourseCode(code)
-		newCourse.setCode(code)
-		name = input("Enter a Course name: ")
-		newCourse.setName(name)
-		university.addCourse(newCourse)
-		print("\nSUCCESS: COURSE RECORD CREATED\n")
-		newCourse.displayDetails()
-		print("\n \n \n")
-	
+		valid, code = validator.validateCourseCode(code)
+		if valid:
+
+			newCourse.setCode(code)
+			name = input("Enter a Course name: ")
+			newCourse.setName(name)
+			university.addCourse(newCourse)
+			print("\nSUCCESS: COURSE RECORD CREATED\n")
+			newCourse.displayDetails()
+			print("\n \n \n")
+		else:
+			print("ERROR: INVALID COURSE CODE FORM")
+
 	# - Search Course
 	def searchCourse(self,university):
 		print("\n \n \n")

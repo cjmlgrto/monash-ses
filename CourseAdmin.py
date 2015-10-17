@@ -23,6 +23,7 @@ from Student import Student
 # - admin, a new Enrolment instance
 # - monash, a new University instance
 
+global baseID
 baseID = 10000000
 admin = Enrolment()
 monash = University("Monash University")
@@ -35,9 +36,10 @@ def main():
 88 YY 88  YbodP  88  Y8 dP""""Yb 8bodP' 88  88    8bodP' 888888 8bodP'
 	'''
 	print(str)
-	mainMenu()
+	mainMenu(baseID)
 
-def mainMenu():
+def mainMenu(baseID):
+	print("---------------------------------------------------------------------")
 	print("\nWELCOME, COURSE ADMIN!" +
 	"\n" +
 	"\n [1] Courses" + 
@@ -51,7 +53,7 @@ def mainMenu():
 	if int(command) == 2:
 		unitsMenu()
 	if int(command) == 3:
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 4:
 		sys.exit(0)
 	
@@ -86,7 +88,7 @@ def coursesMenu():
 		admin.deleteCourse(monash)
 		coursesMenu()
 	if int(command) == 7:
-		mainMenu()
+		mainMenu(baseID)
 	
 def unitsMenu():
 	print("\nUNITS OPTIONS" +
@@ -119,9 +121,9 @@ def unitsMenu():
 		admin.deleteUnit(monash)
 		unitsMenu()
 	if int(command) == 7:
-		mainMenu()
+		mainMenu(baseID)
 	
-def studentsMenu():
+def studentsMenu(baseID):
 	print("\nSTUDENTS OPTIONS" +
 	"\n" +
 	"\n [1] Create Student" + 
@@ -139,53 +141,58 @@ def studentsMenu():
 	)
 	command = promptCommand(1,12)
 	if int(command) == 1:
-		admin.createStudent(baseID,monash)
+		nunv = admin.createStudent(baseID,monash)
+		baseID = nunv
 		# input("Hit enter to return to menu")
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 2:
 		admin.searchStudent(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 3:
 		admin.enrolStudent(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 4:
 		admin.displayUndergraduateStudents(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 5:
 		admin.displayPostgraduateStudents(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 6:
 		admin.displayDomesticStudents(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 7:
 		admin.displayInternationalStudents(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 8:
 		admin.checkUnitEnrolment(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 9:
 		admin.checkCourseEnrolment(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 10:
 		admin.editStudentDetails(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 11:
 		admin.deleteStudent(monash)
-		studentsMenu()
+		studentsMenu(baseID)
 	if int(command) == 12:
-		mainMenu()
+		mainMenu(baseID)
 	
 def promptCommand(lowest,highest):
 	valid = False
 	while not valid:
-		command = input("\nEnter a number to choose from above: ")
-		if command != "" and int(command) >= lowest and int(command) <= highest:
-			return command
-			valid = True
-		else:
+		try:
+			command = input("\nEnter a number to choose from above: ")
+			if command != "" and int(command) >= lowest and int(command) <= highest:
+				return command
+				valid = True
+			else:
+				print("\nError! Please try again.")
+		except ValueError:
 			print("\nError! Please try again.")
 	
 
 # Run on startup	
 if __name__ == "__main__":
     main()
+
