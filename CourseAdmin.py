@@ -14,9 +14,8 @@
 import sys
 from Enrolment import Enrolment
 from University import University
-from Course import Course
-from Unit import Unit
-from Student import Student
+from menuValidation import promptCommand
+
 
 # INITIALISE GLOBAL VARIABLES
 # - baseID, the first iteration of the student count
@@ -99,9 +98,10 @@ def unitsMenu():
 	"\n [4] Display Students in Unit" +
 	"\n [5] Edit Unit Details" +
 	"\n [6] Delete Unit" +
-	"\n [7] Back to Main Menu"
+	"\n [7] Filter Search students in unit"
+	"\n [8] Back to Main Menu"
 	)
-	command = promptCommand(1,7)
+	command = promptCommand(1,8)
 	if int(command) == 1:
 		admin.createUnit(monash)
 		unitsMenu()
@@ -121,6 +121,9 @@ def unitsMenu():
 		admin.deleteUnit(monash)
 		unitsMenu()
 	if int(command) == 7:
+		admin.displayFilterStudentsInUnit(monash)
+		unitsMenu()
+	if int(command) == 8:
 		mainMenu(baseID)
 	
 def studentsMenu(baseID):
@@ -178,18 +181,7 @@ def studentsMenu(baseID):
 	if int(command) == 12:
 		mainMenu(baseID)
 	
-def promptCommand(lowest,highest):
-	valid = False
-	while not valid:
-		try:
-			command = input("\nEnter a number to choose from above: ")
-			if command != "" and int(command) >= lowest and int(command) <= highest:
-				return command
-				valid = True
-			else:
-				print("\nError! Please try again.")
-		except ValueError:
-			print("\nError! Please try again.")
+
 	
 
 # Run on startup	

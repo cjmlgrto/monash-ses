@@ -26,6 +26,7 @@ class Student:
         self.studyType = ''
         self.course = ''
         self.units = []
+        self.campus = ''
         
     # GET ATTRIBUTES
     
@@ -49,6 +50,9 @@ class Student:
 		
     def displayDetails(self):
         print(self.ID + " - " + self.fName + " " + self.lName)
+
+    def getCampus(self):
+        return self.campus
     
     # SET ATTRIBUTES
 
@@ -76,4 +80,6 @@ class Student:
     def addUnit(self, unitCode):
         self.units.append(unitCode)
 
+    def setCampus(self, campus):
+        self.campus = campus
     

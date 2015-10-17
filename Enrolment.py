@@ -17,6 +17,7 @@ from Course import Course
 from Unit import Unit
 from Student import Student
 from Validate import Validate
+from menuValidation import promptCommand
 
 # Initialise global variables
 # - validator, a new instance of the Validate class
@@ -75,14 +76,73 @@ class Enrolment:
 		code = input("Enter a Unit code: ")
 		if university.unitExists(code):
 			unit = university.units[code]
-			print(unit.title + " has " + len(unit.students) + " students:")
+			print(unit.title + " has " + str(len(unit.students)) + " students:")
 			for ID in unit.students:
 				student = university.students[ID]
 				print("\n" + student.fName + " " + student.lName + " (" + student.ID + ")")
 		else:
 			print("ERROR: Unit code does not exist")
 		print("\n \n \n")
-			
+
+	def displayFilterStudentsInUnit(self, university):
+		print("\n \n \n")
+		code = input("Enter a Unit code: ")
+		if university.unitExists(code):
+			unit = university.units[code]
+			print("Please select your filters: ")
+
+			print("Select study filter: ")
+			print("[1] - Full-time students \n[2] - Part-time students \n[3] - Either")
+			command = promptCommand(1,3)
+			command = int(command)
+			if command == 1:
+				studType = 'F'
+			elif command == 2:
+				studType = 'P'
+			else:
+				studType = 'either'
+
+			print("select residency filter: ")
+			print("[1] - Domestic students \n[2] - International students \n[3] - Either")
+			command = promptCommand(1,3)
+			command = int(command)
+			if command == 1:
+				resType = 'D'
+			elif command == 2:
+				resType = 'I'
+			else:
+				resType = 'either'
+
+			print("select degree type filter: ")
+			print("[1] - Undergraduate students \n[2] - Postgraduate students \n[3] - Either")
+			command = promptCommand(1,3)
+			command = int(command)
+			if command == 1:
+				degType = 'U'
+			elif command == 2:
+				degType = 'P'
+			else:
+				degType = 'either'
+
+			print("Displaying students in " + unit.getCode() + " with filters: ")
+			print("Study Type = " + str(studType) + " | Residency Type = " + str(resType) +
+				  " | Degree Type = " + str(degType))
+
+			for studID in unit.students:
+				currentStudent = university.students[studID]
+				if currentStudent.getStudyType() == studType or studType == 'either':
+					if currentStudent.getResidencyType() == resType or resType == 'either':
+						if currentStudent.getDegreeType() == degType or degType == 'either':
+							print(studID + " - Name: " + currentStudent.getName() + " course: " + str(currentStudent.getCourse()))
+
+
+		else:
+			print("ERROR: Unit code does not exist")
+
+
+
+
+
 	# - Edit Unit Details
 	def editUnitDetails(self,university):
 		print("\n \n \n")
@@ -161,7 +221,24 @@ class Enrolment:
 					newStudent.setStudyType(studyType)
 				else:
 					print("ERROR: please enter either F or P")
-			
+
+			print("Please enter Campus")
+			print("\n [1] - Clayton \n[2] - Caulfield \n[3] - Berwick \n[4] - Peninsula \n[5] - Parkville")
+			command = promptCommand(1,5)
+			command = int(command)
+			if command == 1:
+				newStudent.setCampus('Clayton')
+			elif command == 2:
+				newStudent.setCampus('Caulfield')
+			elif command == 3:
+				newStudent.setCampus('Berwick')
+			elif command == 4:
+				newStudent.setCampus('Peninsula')
+			elif command == 5:
+				newStudent.setCampus('Parkville')
+			else:
+				print("ERROR ASSIGNING CAMPUS ")
+
 			course = university.courses[courseCode]
 			course.addStudent(newStudent.ID)
 			university.addStudent(newStudent)
