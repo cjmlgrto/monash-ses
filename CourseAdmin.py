@@ -33,6 +33,10 @@ def main():
 88b  d88 dP   Yb 88Yb88   dPYb   `Ybo." 88  88    `Ybo." 88__   `Ybo." 
 88YbdP88 Yb   dP 88 Y88  dP__Yb  o.`Y8b 888888    o.`Y8b 88""   o.`Y8b 
 88 YY 88  YbodP  88  Y8 dP""""Yb 8bodP' 88  88    8bodP' 888888 8bodP'
+
+ ~~ PROPERTY OF MONASH UNIVERSITY, CREATED WITH FIT1010 RESOURCES ~~
+      ~~ DEVELOPED BY JOSH NELSSON-SMITH & CARLOS MELEGRITO ~~
+
 	'''
 	print(str)
 	mainMenu(baseID)
@@ -41,9 +45,9 @@ def mainMenu(baseID):
 	print("---------------------------------------------------------------------")
 	print("\nWELCOME, COURSE ADMIN!" +
 	"\n" +
-	"\n [1] Courses" + 
-	"\n [2] Units" +
-	"\n [3] Students" +
+	"\n [1] Courses Menu" + 
+	"\n [2] Units Menu" +
+	"\n [3] Students Menu" +
 	"\n [4] Quit"
 	)
 	command = promptCommand(1,4)

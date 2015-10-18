@@ -1,6 +1,3 @@
-import re
-
-
 # Validate CLASS
 # - Module for validation
 
@@ -9,6 +6,8 @@ import re
 
 # Attributes: 
 # - n/a
+
+import re
 
 class Validate:
 	
