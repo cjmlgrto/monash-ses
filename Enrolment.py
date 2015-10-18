@@ -223,7 +223,7 @@ class Enrolment:
 					print("ERROR: please enter either F or P")
 
 			print("Please enter Campus")
-			print("\n [1] - Clayton \n[2] - Caulfield \n[3] - Berwick \n[4] - Peninsula \n[5] - Parkville")
+			print("\n[1] - Clayton \n[2] - Caulfield \n[3] - Berwick \n[4] - Peninsula \n[5] - Parkville")
 			command = promptCommand(1,5)
 			command = int(command)
 			if command == 1:
@@ -259,7 +259,7 @@ class Enrolment:
 		ID = input("Enter a Student ID: ")
 		if university.studentExists(ID):
 			student = university.students[ID]
-			courseCode = university.getCourseCode()
+			courseCode = student.getCourse()
 			course = university.courses[courseCode]
 			student.displayDetails()
 			print("Studying:")
