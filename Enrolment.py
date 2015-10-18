@@ -7,6 +7,7 @@
 # - Unit, (Unit.py)
 # - Student, (Student.py)
 # - Validate, (Validate.py)
+# - menuValidation, (menuValidation.py)
 
 # Attributes: 
 # - n/a
@@ -84,6 +85,7 @@ class Enrolment:
 			print("ERROR: Unit code does not exist")
 		print("\n \n \n")
 
+	# - Filter Students by Type
 	def displayFilterStudentsInUnit(self, university):
 		print("\n \n \n")
 		code = input("Enter a Unit code: ")
@@ -138,9 +140,6 @@ class Enrolment:
 
 		else:
 			print("ERROR: Unit code does not exist")
-
-
-
 
 
 	# - Edit Unit Details

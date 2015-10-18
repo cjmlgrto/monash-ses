@@ -1,4 +1,4 @@
-__author__ = 'xav_work'
+# menuValidation MODULE
 
 
 def promptCommand(lowest,highest):
