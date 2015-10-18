@@ -1,4 +1,4 @@
-![Screen shot here](https://raw.githubusercontent.com/cjmlgrto/MonashSES/master/screenshot.png)
+![Screen shot here](https://raw.githubusercontent.com/cjmlgrto/MonashSES/master/Documentation/screenshot.png)
 
 ## About Monash SES
 

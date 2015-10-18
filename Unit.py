@@ -25,12 +25,6 @@ class Unit:
         
     def getTitle(self):
         return self.title
-        
-    def getSequencesOffered(self):
-        return self.sequencesOffered
-        
-    def getYearOffered(self):
-        return self.yearOffered
 		
     def displayDetails(self):
         print(self.code + " - " + self.title)
