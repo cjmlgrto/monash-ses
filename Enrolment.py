@@ -506,3 +506,59 @@ class Enrolment:
 		else:
 			print("ERROR: Course code does not exist")
 		print("\n \n \n")
+
+	def displayFilterStudentsInCourse(self, university):
+		print("\n \n \n")
+		code = input("Enter a Course code: ")
+		if university.courseExists(code):
+			course = university.courses[code]
+			print("Please select your filters: ")
+
+			print("Select study filter: ")
+			print("[1] - Full-time students \n[2] - Part-time students \n[3] - Either")
+			command = promptCommand(1,3)
+			command = int(command)
+			if command == 1:
+				studType = 'F'
+			elif command == 2:
+				studType = 'P'
+			else:
+				studType = 'either'
+
+			print("select residency filter: ")
+			print("[1] - Domestic students \n[2] - International students \n[3] - Either")
+			command = promptCommand(1,3)
+			command = int(command)
+			if command == 1:
+				resType = 'D'
+			elif command == 2:
+				resType = 'I'
+			else:
+				resType = 'either'
+
+			print("select degree type filter: ")
+			print("[1] - Undergraduate students \n[2] - Postgraduate students \n[3] - Either")
+			command = promptCommand(1,3)
+			command = int(command)
+			if command == 1:
+				degType = 'U'
+			elif command == 2:
+				degType = 'P'
+			else:
+				degType = 'either'
+
+			print("Displaying students in " + course.getCode() + " with filters: ")
+			print("Study Type = " + str(studType) + " | Residency Type = " + str(resType) +
+				  " | Degree Type = " + str(degType))
+
+			for studID in course.students:
+				currentStudent = university.students[studID]
+				if currentStudent.getStudyType() == studType or studType == 'either':
+					if currentStudent.getResidencyType() == resType or resType == 'either':
+						if currentStudent.getDegreeType() == degType or degType == 'either':
+							print(studID + " - Name: " + currentStudent.getName() + " campus: " + str(currentStudent.getCampus()))
+
+
+		else:
+			print("ERROR: Course code does not exist")
+

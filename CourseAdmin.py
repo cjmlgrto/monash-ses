@@ -65,9 +65,10 @@ def coursesMenu():
 	"\n [4] Display Units in Course" +
 	"\n [5] Edit Course Details" +
 	"\n [6] Delete Course" +
-	"\n [7] Back to Main Menu"
+	"\n [7] Display students in course with filter" +
+	"\n [8] Back to Main Menu"
 	)
-	command = promptCommand(1,7)
+	command = promptCommand(1,8)
 	if int(command) == 1:
 		admin.createCourse(monash)
 		coursesMenu()
@@ -87,6 +88,9 @@ def coursesMenu():
 		admin.deleteCourse(monash)
 		coursesMenu()
 	if int(command) == 7:
+		admin.displayFilterStudentsInCourse(monash)
+		coursesMenu()
+	if int(command) == 8:
 		mainMenu(baseID)
 	
 def unitsMenu():
